@@ -1,5 +1,6 @@
 import { Form, Formik, Field, ErrorMessage } from 'formik'
 import './App.css'
+import { TextInput } from './components/TextInput';
 
 const validarEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -19,9 +20,10 @@ const validate = (values) => {
   if (!values.email) {
     errors.email = 'Requerido'
   } else if (validarEmail(values.email)) {
-    console.log("El correo electrónico es válido");
+    errors.email = 'El correo es valido';
   } else {
-    console.log("El correo electrónico no es válido");
+    errors.email = 'El correo es Invalido';
+    console.log('El correo es Invalido');
   }
   return errors
 }
@@ -38,21 +40,12 @@ function App() {
 
       >
         <Form className='form' >
-          <label> Nombre</label>
-          <Field type="text" name='name' className='input' />
-          <ErrorMessage name='name' />
 
-          < label > Apellido</label>
-          <Field type="text" name='lastname' className='input' />
-          <ErrorMessage name='lastname' />
+          <TextInput name='name' label='Nombre' />
 
-          <label> Correo</label>
-          <Field type="text" name='email' className='input' />
-          <ErrorMessage name='email' />
+          < TextInput name='lastname' label='Apellido' />
 
-          {/* < label > TextArea</label>
-        <Field type="text" as='textarea' name='lastname' />
-        <ErrorMessage name='lastname' /> */}
+          <TextInput name='email' label='Correo' />
 
           <button type='submit'>Enviar</button>
 

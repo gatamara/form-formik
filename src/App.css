@@ -10,10 +10,15 @@
   border-radius: 4px;
   border: none;
   background-color: rgb(98, 83, 112);
+  width: 240px;
 }
 
 .title {
   text-align: center;
   font-size: 2rem;
   padding-bottom: 16px;
+}
+
+.error-menssage {
+  color: red;
 }
