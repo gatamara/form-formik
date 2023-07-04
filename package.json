@@ -1,6 +1,6 @@
 {
-  "name": "formik",
   "homepage": "https://gatamara.github.io/form-formik",
+  "name": "formik",
   "private": true,
   "version": "0.0.0",
   "type": "module",
